@@ -10,7 +10,6 @@ The model classifies cough audio into three quality categories:
 
 This helps filter poor-quality recordings before they are used by cough detection or health screening models.
 
----
 
 ## Dataset
 
@@ -26,7 +25,6 @@ Metadata files included in this repository:
 
 Raw audio files are not included.
 
----
 
 ## Installation
 
@@ -37,7 +35,6 @@ git clone https://github.com/TahRafat/AST-cough-audio-quality.git
 Install required libraries: 
 pip install -r requirements.txt
 
----
 
 ## Model Performance
 
@@ -50,7 +47,6 @@ Test results:
 | Recall (macro) | 92.39% |
 | F1-score (macro) | 91.44% |
 
----
 
 ## Latency
 
@@ -59,7 +55,6 @@ Average inference latency: 23.68 ms
 
 This makes the model suitable for **real-time cough screening systems**.
 
----
 
 ## Acknowledgements
 
