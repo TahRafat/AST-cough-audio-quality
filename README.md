@@ -26,34 +26,6 @@ Model used:
 Audio Spectrogram Transformer (AST)
 
 Pretrained checkpoint:
-# AST Cough Audio Quality Classification
-
-This project uses an **Audio Spectrogram Transformer (AST)** model to detect the quality of cough recordings.
-
-The model classifies recordings into:
-
-- clean
-- noisy
-- too_low_volume
-
-## Dataset
-
-The dataset is derived from the **Coswara cough dataset**.  
-Cough recordings were filtered and labeled using signal-processing heuristics.
-
-Metadata files included in this repository:
-
-- `dataset/coswara_quality_labels_train.csv`
-- `dataset/coswara_quality_labels_val.csv`
-- `dataset/coswara_quality_labels_test.csv`
-
-## Model
-
-Model used:
-
-Audio Spectrogram Transformer (AST)
-
-Pretrained checkpoint:
 ## Performance
 
 Test results:
@@ -67,9 +39,7 @@ Test results:
 
 ## Latency
 
-Average inference latency: 
-23.68 ms
-
+Average inference latency: 23.68 ms
 
 This makes the model suitable for **real-time cough screening systems**.
 
