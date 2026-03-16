@@ -1,21 +1,21 @@
-# AST Cough Audio Quality Classification
+# AST Respiratory Audio Quality Classification
 
-This project uses an **Audio Spectrogram Transformer (AST)** model to detect the quality of cough recordings.
+This project uses an **Audio Spectrogram Transformer (AST)** model to detect the quality of respiratory audio recordings.
 
-The model classifies cough audio into three quality categories:
+The model classifies audio into three quality categories:
 
 - clean
 - noisy
 - too_low_volume
 
-This helps filter poor-quality recordings before they are used by cough detection or health screening models.
+The system was evaluated on **cough and breathing recordings** to assess audio quality before they are used by respiratory health screening models.
 
 
 ## Dataset
 
-The project uses cough recordings from the **Coswara dataset**.
+The project uses recordings from the **Coswara dataset**.
 
-Only cough audio samples were used and automatically labeled using signal-processing heuristics.
+Respiratory audio samples (cough and breathing) were automatically labeled using signal-processing heuristics.
 
 Metadata files included in this repository:
 
@@ -29,10 +29,11 @@ Raw audio files are not included.
 ## Installation
 
 Clone the repository:
+
 git clone https://github.com/TahRafat/AST-cough-audio-quality.git
 
+Install required libraries:
 
-Install required libraries: 
 pip install -r requirements.txt
 
 
@@ -40,20 +41,20 @@ pip install -r requirements.txt
 
 Test results:
 
-| Metric | Score |
-|------|------|
-| Accuracy | 97.05% |
-| Precision (macro) | 90.54% |
-| Recall (macro) | 92.39% |
-| F1-score (macro) | 91.44% |
+| Metric | Cough | Breathing |
+|------|------|------|
+| Accuracy | 97.05% | 96.8% |
+| Precision (macro) | 90.54% | 89.7% |
+| Recall (macro) | 92.39% | 91.8% |
+| F1-score (macro) | 91.44% | 90.7% |
 
 
 ## Latency
 
-Average inference latency: 23.68 ms
+Cough:Average inference latency: **23.68 ms**
+Breathe: Average inference latency: **22.10 ms**
 
-
-This makes the model suitable for **real-time cough screening systems**.
+This makes the model suitable for **real-time respiratory screening systems**.
 
 
 ## Acknowledgements
