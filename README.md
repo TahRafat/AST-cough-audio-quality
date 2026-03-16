@@ -52,6 +52,7 @@ Test results:
 ## Latency
 
 Cough:Average inference latency: **23.68 ms**
+
 Breathe: Average inference latency: **22.10 ms**
 
 This makes the model suitable for **real-time respiratory screening systems**.
