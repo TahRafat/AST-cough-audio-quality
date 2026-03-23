@@ -1,67 +1,74 @@
-# AST Respiratory Audio Quality Classification
+# AST Respiratory Audio Classification
 
-This project uses an **Audio Spectrogram Transformer (AST)** model to detect the quality of respiratory audio recordings.
+This project uses an **Audio Spectrogram Transformer (AST)** model to classify respiratory audio signals based on their physiological characteristics.
 
-The model classifies audio into three quality categories:
+Two specialized models were developed:
 
-- clean
-- noisy
-- too_low_volume
+* **Cough Model:** classifies cough recordings into
 
-The system was evaluated on **cough and breathing recordings** to assess audio quality before they are used by respiratory health screening models.
+  * heavy
+  * shallow
 
+* **Breathing Model:** classifies breathing recordings into
+
+  * deep
+  * shallow
+
+The system is designed to support **respiratory health analysis pipelines** by extracting meaningful patterns from audio signals.
 
 ## Dataset
 
-The project uses recordings from the **Coswara dataset**.
+The project uses the **Coswara dataset**, which contains various respiratory sound recordings.
 
-Respiratory audio samples (cough and breathing) were automatically labeled using signal-processing heuristics.
+The following subsets were used:
 
-Metadata files included in this repository:
+* `cough-heavy`, `cough-shallow`
+* `breathing-deep`, `breathing-shallow`
 
-- dataset/coswara_quality_labels_train.csv
-- dataset/coswara_quality_labels_val.csv
-- dataset/coswara_quality_labels_test.csv
-
-Raw audio files are not included.
+Audio samples were filtered and labeled directly based on the dataset’s `audio_type` field.
 
 
 ## Installation
 
 Clone the repository:
 
+```bash
 git clone https://github.com/TahRafat/AST-cough-audio-quality.git
+```
 
-Install required libraries:
+Install dependencies:
 
+```bash
 pip install -r requirements.txt
-
+```
 
 ## Model Performance
 
-Test results:
+Both models were evaluated on the Coswara dataset to compare classification performance.
 
-| Metric | Cough | Breathing |
-|------|------|------|
-| Accuracy | 97.05% | 96.8% |
-| Precision (macro) | 90.54% | 89.7% |
-| Recall (macro) | 92.39% | 91.8% |
-| F1-score (macro) | 91.44% | 90.7% |
+### Comparison: Cough vs Breathing
+
+| Metric    | Cough Model | Breathing Model |
+| --------- | ----------- | --------------- |
+| Accuracy  | 74.17%      | 74.85%          |
+| F1-score  | 74.16%      | 74.85%          |
+| Balance   | Slight bias | Perfect balance |
+| Stability | Good        | Better          |
+| Latency   | ~26.9 ms    | ~22.1 ms        |
 
 
-## Latency
+Both models support **real-time inference**, making them suitable for deployment in interactive or monitoring systems.
 
-Cough:Average inference latency: **23.68 ms**
+## Key Observations
 
-Breathe: Average inference latency: **22.10 ms**
-
-This makes the model suitable for **real-time respiratory screening systems**.
-
+* The breathing model achieves slightly better and more balanced performance than the cough model.
+* Cough classification is more challenging due to signal variability and overlapping acoustic patterns.
+* The models demonstrate strong generalization despite the complexity of respiratory audio.
 
 ## Acknowledgements
 
-Coswara Dataset  
+**Coswara Dataset**
 https://github.com/iiscleap/Coswara-Dataset
 
-Audio Spectrogram Transformer (AST)  
+**Audio Spectrogram Transformer (AST)**
 https://github.com/YuanGongND/ast
