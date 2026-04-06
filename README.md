@@ -4,8 +4,8 @@
 This project builds a deep learning model to classify cough and breathing sounds using a transformer-based architecture (AST). The system is designed for healthcare applications such as early disease detection.
 
 ## 🚀 Results
-- Cough classification accuracy: 97.05%
-- Breathing classification accuracy: 96.8%
+- Cough classification accuracy: 80.2%
+- Breathing classification accuracy: 85.5%
 
 ## 🧠 Key Features
 - Transformer-based audio classification model
